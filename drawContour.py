@@ -35,6 +35,7 @@ def drawContour():
             else:
                 line_str += ' '
         output.append(line_str)
+        
     #輪廓輸出
     with open(output_file, 'w', newline='') as f:
         for i in range(len(output)):
@@ -42,6 +43,7 @@ def drawContour():
 
 def foundStartLine():
     global dim,countoursImg,startLine,endLine
+    
     #刪除不必要的資料
     countoursImg = countoursImg[3:-3]
     countoursImg_resize = np.zeros((dim[0]-6,dim[1]-6))
@@ -74,19 +76,24 @@ def foundStartLine():
 
 def foundContour():
     global dim,countoursImg
+    
     #讀取圖片
     file_path_new = file_path + '\\' + file_name
     img = cv2.imread(file_path_new)
     dim = (70,70)
     img = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
     img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    
     #圖片經模糊化處理
     cv2.GaussianBlur(img,(5,5),0)
+    
     #圖片經二值化處理
     _,new_img = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
     new_img = 255 - new_img
+    
     #找出輪廓
     countours, hierarchy = cv2.findContours(new_img,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+    
     #面積小於10之輪廓不取
     countours_new = []
     for item in countours:
@@ -97,6 +104,7 @@ def foundContour():
 
     imgH,imgW = img.shape
     countoursImg = np.full((imgH,imgH),255)
+    
     #畫出輪廓
     cv2.drawContours(countoursImg,countours_new,-1,(0,255,0),1)
 
@@ -130,6 +138,7 @@ def chromeGetImg():
     pyautogui.typewrite(['enter'])
     pyautogui.hotkey('alt', 's')
     sleep(3)
+    
     #若檔名已存在，取代它
     if os.path.isfile(file_name):
         pyautogui.typewrite('y')
