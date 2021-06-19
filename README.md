@@ -43,7 +43,7 @@ foundStartLine()
 drawContour()
 ```
 ## 執行結果
-* 原圖  
+### 原圖  
 ![searchImage](https://user-images.githubusercontent.com/72730771/122646616-a030ac80-d152-11eb-90b0-5ef61312b8be.jpg)
-* out.txt  
+### out.txt  
 <img width="575" alt="山羊" src="https://user-images.githubusercontent.com/72730771/122646654-d5d59580-d152-11eb-8910-c21b52c39de0.png">
