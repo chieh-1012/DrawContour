@@ -160,4 +160,9 @@ with open(outputFile, 'w', newline='') as f:
 ### 原圖  
 ![searchImage](https://user-images.githubusercontent.com/72730771/122928780-c3e73300-d39c-11eb-9377-998e16976b2a.jpg)
 ### out.txt  
-<img width="399" alt="企鵝結果" src="https://user-images.githubusercontent.com/72730771/122928939-ec6f2d00-d39c-11eb-8c0c-bbe8ac98728c.png">
+<img width="399" alt="企鵝結果" src="https://user-images.githubusercontent.com/72730771/122928939-ec6f2d00-d39c-11eb-8c0c-bbe8ac98728c.png">  
+
+## 參考資料  
+* https://www.minwt.com/webdesign-dev/html/21781.html  
+* https://resmush.it/api   
+* https://ithelp.ithome.com.tw/articles/10220161  
